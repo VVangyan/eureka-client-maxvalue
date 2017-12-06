@@ -77,6 +77,7 @@
 		</dependencies>
 	</dependencyManagement>
 	<build>
+	    <finalName>eureka-client-maxvalue</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
