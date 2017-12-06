@@ -1,0 +1,20 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+server:
+  port: 8001
+spring:
+  application:
+    name: eureka-client-maxvalue
+  resources:
+    static-locations: classpath:/static/,classpath:/templates/
+  thymeleaf:
+    cache: false
+    mode: HTML5
+
+
+
+
+
+

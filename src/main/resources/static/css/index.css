@@ -1,0 +1,28 @@
+.base_div{
+    display: flex;
+    flex-flow: column;
+    height: 600px;
+    width: 100%;
+}
+.div_title{
+    display: flex;
+    flex: 10%;
+}
+.div_contend{
+    display: flex;
+    flex: 90%;
+    border: 1px solid #666666;
+    flex-direction: column;
+}
+.div_contend_top{
+    display: flex;
+    border: 1px solid brown;
+    flex: 1;
+    padding-top: 20px;
+}
+
+.div_contend_down{
+    display: flex;
+    border: 1px solid royalblue;
+    flex: 1;
+}

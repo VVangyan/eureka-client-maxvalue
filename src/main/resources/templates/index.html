@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link th:href="@{css/index.css}" rel="stylesheet"/>
+<script th:src="@{js/jquery-1.12.4.js}"></script>
+<head>
+    <meta charset="UTF-8"/>
+    <title>极差运算</title>
+</head>
+<body>
+<div class="base_div">
+    <div class="div_title">
+        <div style="margin: 0 auto;font-size: 30px;line-height: 50px">极差运算</div>
+    </div>
+    <div class="div_contend">
+        <div class="div_contend_top">
+            <div>最大值：</div>
+            <div>
+                <input type="text" id="a"/>
+            </div>
+            <div>
+                <input type="text" id="b"/>
+            </div>
+            <div>
+                <button id="compute">计算</button>
+            </div>
+            <div style="width: 100px;height: 1px"></div>
+            <div>
+                结果：
+            </div>
+            <div>
+                    <textarea style="resize: none" id="result">
+
+                    </textarea>
+            </div>
+        </div>
+        <div class="div_contend_down">
+            <div>最小值：</div>
+            <div>
+                <input type="text" id="a1"/>
+            </div>
+            <div>
+                <input type="text" id="b1"/>
+            </div>
+            <div>
+                <button id="compute1">计算</button>
+            </div>
+            <div style="width: 100px;height: 1px"></div>
+            <div>
+                结果：
+            </div>
+            <div>
+                    <textarea style="resize: none" id="result1">
+
+                    </textarea>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+
+        $("#compute").on("click", function () {
+            var url="http://localhost:8001/max"
+            var data={};
+            data.a= parseInt($("#a").val());
+            data.b= parseInt($("#b").val());
+            $.ajax({
+                    type: 'GET',
+                    url: url,
+                    data: data,
+                    dataType:'JSON',
+                    success: function (r) {
+                        console.log(r)
+                        $("#result").val(r);
+                    }
+                }
+            );
+        })
+
+        $("#compute1").on("click", function () {
+            var url="http://localhost:8001/min"
+            var data={};
+            data.a= parseInt($("#a1").val());
+            data.b= parseInt($("#b1").val());
+            $.ajax({
+                    type: 'GET',
+                    url: url,
+                    data: data,
+                    dataType:'JSON',
+                    success: function (r) {
+                        console.log(r)
+                        $("#result1").val(r);
+                    }
+                }
+            );
+        })
+
+    })
+</script>
