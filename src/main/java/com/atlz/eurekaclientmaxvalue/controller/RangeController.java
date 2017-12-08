@@ -1,5 +1,6 @@
 package com.atlz.eurekaclientmaxvalue.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class RangeController {
-    @RequestMapping("/max")
+	@GetMapping("/max")
     public Integer max(@RequestParam Integer a, @RequestParam Integer b){
         if(a==null) return null;
         if(b==null) return null;
         return  a>b ? a:b;
     }
-    @RequestMapping("/min")
+    @GetMapping("/min")
     public Integer min(@RequestParam Integer a, @RequestParam Integer b){
         if(a==null) return null;
         if(b==null) return null;

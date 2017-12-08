@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class InfoController {
-    @RequestMapping("/")
+    @RequestMapping("/info")
     public String info(){
         return "index";
     }

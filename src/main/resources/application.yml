@@ -1,9 +1,12 @@
+server:
+  port: 8001
 eureka:
   client:
     service-url:
-      defaultZone: http://z02.demo08.haproxy-192-168-1-117-alaudademo08.myalauda.cn:8000/eureka/
-server:
-  port: 8001
+      #defaultZone: http://z02.demo08.haproxy-192-168-1-117-alaudademo08.myalauda.cn:8000/eureka/
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    prefer-ip-address: true
 spring:
   application:
     name: eureka-client-maxvalue
@@ -12,7 +15,6 @@ spring:
   thymeleaf:
     cache: false
     mode: HTML5
-
 
 
 
