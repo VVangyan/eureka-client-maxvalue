@@ -59,11 +59,13 @@
 </div>
 </body>
 </html>
+<script type="text/javascript" th:inline="javascript">
+	basePath = /*[[${#httpServletRequest.getScheme() + "://" + #httpServletRequest.getServerName() + ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()}]]*/;
+</script>
 <script>
     $(function () {
-
         $("#compute").on("click", function () {
-            var url="http://localhost:8001/max"
+            var url=basePath+"/max"
             var data={};
             data.a= parseInt($("#a").val());
             data.b= parseInt($("#b").val());
@@ -81,7 +83,7 @@
         })
 
         $("#compute1").on("click", function () {
-            var url="http://localhost:8001/min"
+            var url=basePath+"/min"
             var data={};
             data.a= parseInt($("#a1").val());
             data.b= parseInt($("#b1").val());
