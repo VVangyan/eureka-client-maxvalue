@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8000/eureka/
+      defaultZone: http://z02.demo08.haproxy-192-168-1-117-alaudademo08.myalauda.cn:8000/eureka/
 server:
   port: 8001
 spring:
